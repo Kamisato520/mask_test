@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS样式将会在下面提供 */
+        body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #e6e6e6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px 10px 10px 45px; /* 增加左侧填充以适应图标 */
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            height: 40px; /* 设置输入框的固定高度 */
+            box-sizing: border-box; /* 确保边框和内边距不会增加输入框的总宽度 */
+        }
+
+        .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%; /* 将图标定位到输入框的一半高度 */
+            transform: translateY(-0%); /* 用transform向上移动图标自身高度的一半来居中对齐 */
+            color: #cccccc;
+            font-size: 16px; /* 可以调整图标大小 */
+            pointer-events: none; /* 防止图标影响输入框的点击 */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .floating-nav {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+        }
+
+        /* 导航按钮的样式 */
+        .nav-btn {
+            display: block;
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            background-color: #007bff; /* 可以考虑使用渐变色或更鲜艳的颜色 */
+            color: white;
+            text-align: center;
+            border-radius: 8px; /* 更圆的角 */
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s; /* 平滑过渡效果 */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影以增加深度 */
+            font-size: 16px; /* 根据需要调整字体大小 */
+        }
+
+        .nav-btn:hover {
+            background-color: #0056b3; /* 悬停时改变颜色 */
+            transform: scale(1.05); /* 悬停时轻微放大 */
+        }
+
+        footer {
+            text-align: center; /* 将文本居中对齐 */
+
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 0; /* 移除段落的默认外边距 */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="{{ url_for('static', filename='mask_detection_cover.png') }}" alt="Mask Detection Cover" style="max-width: 100%; height: auto;">
+        </div>
+
+        <h2>Login</h2>
+        <form action="" method="post">
+            <div class="input-container">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="input-with-icon">
+                <i class="fas fa-user icon username-icon"></i> <!-- 用户名图标 -->
+            </div>
+            <div class="input-container">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="input-with-icon">
+                <i class="fas fa-lock icon password-icon"></i> <!-- 密码图标 -->
+            </div>
+            <input type="submit" value="Login" class="submit-btn">
+        </form>
+        <p class="register-link">Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
+    </div>
+     <!-- 悬浮导航条 -->
+    <div class="floating-nav">
+        <a href="{{ url_for('introduction') }}" class="nav-btn">介绍</a>
+        <a href="{{ url_for('suggestions') }}" class="nav-btn">建议</a>
+    </div>
+
+</body>
+</html>

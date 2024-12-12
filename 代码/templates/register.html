@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e7e7e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-input {
+            margin-bottom: 20px;
+        }
+        .form-input label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-input input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .form-submit {
+            text-align: right;
+        }
+        .form-submit input {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-submit input:hover {
+            background-color: #0056b3;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post" class="register-form">
+            <div class="form-input">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-input">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <div class="login-link">
+            <a href="{{ url_for('login') }}">Already have an account? Login</a>
+        </div>
+    </div>
+</body>
+</html>

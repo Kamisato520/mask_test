@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Camera Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Example CSS for Plum Blossom Theme */
+        body {
+            background-color: #fff0f5; /* Light pink background */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: url('plum-blossom-pattern.jpg'); /* Background image with plum blossom pattern */
+            color: #800000; /* Deep red for contrast */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .camera-feed {
+            background-color: #ffffff; /* White background for the camera feed section */
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd; /* Light border for the section */
+            border-radius: 8px; /* Rounded corners */
+            width: 80%;
+        }
+
+        .camera-feed h2 {
+            color: #800000; /* Deep red for headings */
+        }
+
+        img {
+            width: 100%; /* Make the image responsive */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Remote Camera Viewer</h1>
+    </header>
+    <main>
+        <section class="camera-feed">
+            <h2>Camera Feed</h2> <!-- 添加标题 -->
+            <img src="/video_feed" alt="Camera feed">
+        </section>
+    </main>
+</body>
+</html>
